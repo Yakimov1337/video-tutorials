@@ -1,10 +1,10 @@
-// const todo = require('../services/todo');
+const courseService = require('../services/courseService');
 
 
 
-module.exports = () => (req, res,next) => {
+module.exports = () => (req, res, next) => {
     req.storage = {
-
+        ...courseService,
     };
     next();
 };
