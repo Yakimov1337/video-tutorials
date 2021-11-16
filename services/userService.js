@@ -19,7 +19,13 @@ async function getUserByUsername(username) {
     return user;
 }
 
+async function getEnrolledCourses(userId){
+    const courses = User.findById(userId);
+    return courses.populate('enrolledCourses').lean();
+}
+
 module.exports = {
     createUser,
-    getUserByUsername
+    getUserByUsername,
+    getEnrolledCourses
 };
